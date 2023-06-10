@@ -1,0 +1,36 @@
+# different IPs (that there's in one and the other), number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, uploaded bytes to internet, downloaded bytes to internet,
+
+
+1- Arranjar maneira de explicar estes server attacks (o que são?)
+Server IPs:
+192.168.101.234 (78056 fluxos, sejam ele src ou dst IP nesse fluxo)
+192.168.101.239 (76585 ...)
+192.168.101.224 (52409 ...)
+192.168.101.228 (52107 ...)
+(o próximo tem apenas 11162 fluxos, que é valor normal)
+
+Server IPs on test:
+192.168.101.228 (143635 ...) -- is a Server! (x3 do fluxo normal)
+192.168.101.224 (140721 ...) -- is a Server! (x3 do fluxo normal)
+192.168.101.42  ( 83568 ...) -- not a Server!!! (x13 do fluxo normal)
+192.168.101.239 ( 82849 ...) Chill
+192.168.101.234 ( 82522 ...) Chill
+192.168.101.60  ( 50991 ...) -- not a Server!!! (x17 do fluxo normal)
+192.168.101.41  ( 49802 ...) -- not a Server!!! (x6 do fluxo normal)
+Outros IPs abaixo disto aumentaram o tráfego para o dobro ou triplo mas dentro de valores normais (diria eu)
+
+Analyze properly the timeline_server_attackers.
+There's a DNS attack (flows to servers using UDP port 53).
+Comms with outside IPs using TCP 443 (HTTPS) 
+Server IPs attacked (probably DNS servers) -> 192.168.101.228
+					   -> 192.168.101.224
+------------------------------------------------------------------------					   
+
+Botnet suspect IPs (new internal comms)
+192.168.101.11
+192.168.101.110
+192.168.101.14
+192.168.101.34  (Graph for this one) --> He's sending packets to the Servers 239 and 234 (DDoS? Idk, maybe just exploring ports). Definitely a bot (visible in the graph
+
+The same IPs have appeared making connections to the outside
+
