@@ -1,7 +1,7 @@
 # different IPs (that there's in one and the other), number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, number of flows to port 53 private to internet, number of flows to port 53 public to internet, number of flows to port 443 private to internet, number of flows to port 443 public to internet, uploaded bytes to internet, downloaded bytes to internet,
 
 
-1- Arranjar maneira de explicar estes server attacks (o que são?)
+1- Arranjar maneira de explicar estes server attacks (o que são?) C&C
 Server IPs:
 192.168.101.234 (78056 fluxos, sejam ele src ou d	st IP nesse fluxo)
 192.168.101.239 (76585 ...)
